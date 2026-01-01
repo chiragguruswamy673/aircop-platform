@@ -18,24 +18,42 @@ AIRCOP is an autonomous, AI-driven self-healing platform built on Kubernetes tha
   - Controlled failure injection with visual proof of recovery
 
 ---
+## 🏗️ Architecture Diagram
 
-## 🏗️ Architecture Overview
+```mermaid
+flowchart TD
+    Client[Client / User]
+    Gateway[Gateway Service<br/>(FastAPI)]
+    Kafka[Kafka<br/>(Redpanda)]
+    DecisionEngine[Decision Engine]
+    
+    Risk[Reliability Agent]
+    Impact[Impact Agent]
+    Cost[Cost Signal Collector]
+    LLM[LLM Reasoning Agent]
 
-Client  
-↓  
-Gateway Service (FastAPI)  
-↓  
-Kafka (Redpanda)  
-↓  
-Decision Engine  
-- Reliability Agent  
-- Impact Agent  
-- Cost Signal Collector  
-- LLM Reasoning Agent  
-↓  
-Explainable Decision  
-↓  
-Kubernetes Action
+    K8s[Kubernetes]
+    Restart[Pod Restart / Scale / Monitor]
+
+    Prometheus[Prometheus]
+    Grafana[Grafana]
+
+    Client --> Gateway
+    Gateway -->|Health / Failure Events| Kafka
+    Kafka --> DecisionEngine
+
+    DecisionEngine --> Risk
+    DecisionEngine --> Impact
+    DecisionEngine --> Cost
+    DecisionEngine --> LLM
+
+    LLM -->|Explainable Decision| K8s
+    K8s --> Restart
+
+    Gateway --> Prometheus
+    K8s --> Prometheus
+    Prometheus --> Grafana
+
 
 ---
 
