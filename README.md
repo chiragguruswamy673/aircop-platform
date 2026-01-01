@@ -53,8 +53,9 @@ flowchart TD
     Gateway --> Prometheus
     K8s --> Prometheus
     Prometheus --> Grafana
-    
-    ```
+
+ ```
+ 
 ---
 
 ## 🧠 Decision Intelligence Flow
