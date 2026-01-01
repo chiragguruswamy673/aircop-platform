@@ -37,11 +37,11 @@ Decision Engine
 └─ LLM Reasoning Agent
 |
 v
-Explainable Decisio
+Explainable Decision
 |
 v
-Kubernetes Action (Restart / Monitor / Ignore)
-
+Kubernetes Action
+(RESTART / MONITOR / IGNORE)
 
 ---
 
