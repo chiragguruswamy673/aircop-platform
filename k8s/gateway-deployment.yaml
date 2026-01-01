@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aircop-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aircop-gateway
+  template:
+    metadata:
+      labels:
+        app: aircop-gateway
+    spec:
+      containers:
+        - name: gateway
+          image: aircop-platform-gateway:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+env:
+  - name: ENABLE_KAFKA
+    value: "true"
+  - name: KAFKA_BROKER
+    value: "redpanda:9092"

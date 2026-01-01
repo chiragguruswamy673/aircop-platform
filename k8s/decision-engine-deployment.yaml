@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: decision-engine
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: decision-engine
+  template:
+    metadata:
+      labels:
+        app: decision-engine
+    spec:
+      serviceAccountName: decision-engine-sa
+      containers:
+        - name: decision-engine
+          image: aircop-platform-decision-engine:latest
+          imagePullPolicy: IfNotPresent
+          command: ["python", "decision_engine/consumer.py"]
+env:
+  - name: ENABLE_KAFKA
+    value: "true"
+  - name: KAFKA_BROKER
+    value: "redpanda:9092"
