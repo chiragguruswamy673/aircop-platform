@@ -22,43 +22,24 @@ AIRCOP is an autonomous, AI-driven self-healing platform built on Kubernetes tha
 ## 🏗️ Architecture Overview
 
 Client
-
 |
-
 v
-
 Gateway Service (FastAPI)
-
 |
-
 v
-
 Kafka (Redpanda)
-
 |
-
 v
-
 Decision Engine
-
 ├─ Reliability Agent
-
 ├─ Impact Agent
-
 ├─ Cost Signal Collector
-
 └─ LLM Reasoning Agent
-
 |
-
 v
-
-Explainable Decision
-
+Explainable Decisio
 |
-
 v
-
 Kubernetes Action (Restart / Monitor / Ignore)
 
 
