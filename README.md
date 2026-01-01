@@ -26,6 +26,7 @@ Client
 Gateway Service (FastAPI)  
 ↓  
 Kafka (Redpanda)  
+
 ↓  
 Decision Engine  
 - Reliability Agent  
