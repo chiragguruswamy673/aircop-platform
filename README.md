@@ -22,21 +22,21 @@ AIRCOP is an autonomous, AI-driven self-healing platform built on Kubernetes tha
 
 ```mermaid
 flowchart TD
-    Client[Client / User]
-    Gateway[Gateway Service<br/>(FastAPI)]
-    Kafka[Kafka<br/>(Redpanda)]
-    DecisionEngine[Decision Engine]
+    Client["Client / User"]
+    Gateway["Gateway Service (FastAPI)"]
+    Kafka["Kafka (Redpanda)"]
+    DecisionEngine["Decision Engine"]
     
-    Risk[Reliability Agent]
-    Impact[Impact Agent]
-    Cost[Cost Signal Collector]
-    LLM[LLM Reasoning Agent]
+    Risk["Reliability Agent"]
+    Impact["Impact Agent"]
+    Cost["Cost Signal Collector"]
+    LLM["LLM Reasoning Agent"]
 
-    K8s[Kubernetes]
-    Restart[Pod Restart / Scale / Monitor]
+    K8s["Kubernetes"]
+    Restart["Pod Restart / Scale / Monitor"]
 
-    Prometheus[Prometheus]
-    Grafana[Grafana]
+    Prometheus["Prometheus"]
+    Grafana["Grafana"]
 
     Client --> Gateway
     Gateway -->|Health / Failure Events| Kafka
