@@ -76,73 +76,46 @@ Instead of static rules, AIRCOP uses an LLM-style reasoning agent that returns *
 ```
 This ensures:
 
-Deterministic execution
-
-Auditability
-
-Safe AI usage in infrastructure decisions
+- Deterministic execution
+- Auditability
+- Safe AI usage in infrastructure decisions
 
 ## 📊 Observability
 Metrics
-
-http_requests_total
-
-Pod restart counts
-
-Request rate trends
-
-Dashboards
-
-Traffic dips during failure
-
-Automatic recovery after healing
-
-Restart visualization
+- http_requests_total
+- Pod restart counts
+- Request rate trends
+- Dashboards
+- Traffic dips during failure
+- Automatic recovery after healing
+- Restart visualization
 
 ## 🧪 Chaos Engineering Validation
-Pod termination testing
-
-Application-level failure injection
-
-AI-triggered recovery
-
-Visual verification via Grafana
+- Pod termination testing
+- Application-level failure injection
+- AI-triggered recovery
+- Visual verification via Grafana
 
 ## 🛠️ Tech Stack
-Backend: Python, FastAPI
-
-Messaging: Kafka (Redpanda)
-
-AI Reasoning: LLM-style agent (pluggable)
-
-Orchestration: Kubernetes (Minikube)
-
-Observability: Prometheus, Grafana
-
-Containerization: Docker
+- Backend: Python, FastAPI
+- Messaging: Kafka (Redpanda)
+- AI Reasoning: LLM-style agent (pluggable)
+- Orchestration: Kubernetes (Minikube)
+- Observability: Prometheus, Grafana
+- Containerization: Docker
 
 ## 📌 Why This Project Is Different
 Most self-healing systems:
-
-Restart blindly
-
-Ignore cost
-
-Lack explainability
-
+- Restart blindly
+- Ignore cost
+- Lack explainability
 AIRCOP:
-
-Reasons before acting
-
-Balances reliability and cost
-
-Explains every decision
+- Reasons before acting
+- Balances reliability and cost
+- Explains every decision
 
 ## 🔮 Future Enhancements
-Real LLM integration (OpenAI / Azure / Local)
-
-Confidence-based safety guardrails
-
-Cost modeling per cloud provider
-
-Grafana decision annotations
+- Real LLM integration (OpenAI / Azure / Local)
+- Confidence-based safety guardrails
+- Cost modeling per cloud provider
+- Grafana decision annotations
